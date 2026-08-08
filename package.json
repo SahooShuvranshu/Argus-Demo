@@ -1,0 +1,12 @@
+{
+  "name": "argus-demo",
+  "version": "1.0.0",
+  "description": "Demo service repository for ARGUS AI Code Reviewer live demonstration",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
