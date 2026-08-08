@@ -26,4 +26,8 @@ jobs:
         uses: SahooShuvranshu/Argus@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          groq-api-key: ${{ secrets.GROQ_API_KEY }}
           gemini-api-key: ${{ secrets.GEMINI_API_KEY }}
+          api-key: ${{ secrets.GROQ_API_KEY || secrets.GEMINI_API_KEY }}
+          base-url: "https://api.groq.com/openai/v1"
+          model: "llama-3.3-70b-versatile"
