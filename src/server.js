@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const dashboardRouter = require('./routes/dashboard');
+const exportRouter = require('./routes/export');
 const rateLimiter = require('./middleware/rateLimiter');
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(rateLimiter({ windowMs: 60000, max: 100 }));
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api/dashboard', dashboardRouter);
+app.use('/api/export', exportRouter);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
