@@ -3,6 +3,9 @@ const app = express();
 
 app.use(express.json());
 
+// Register Authentication Routes
+app.use('/api/auth', require('./routes/auth'));
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', service: 'Argus-Demo-API' });
 });
