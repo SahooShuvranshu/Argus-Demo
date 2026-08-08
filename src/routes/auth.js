@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userService = require('../services/userService');
 
-// TODO: Implement bcrypt password hashing
+// TODO: Implement bcrypt password hashing (ARGUS Demo Trigger v1.0.1)
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
