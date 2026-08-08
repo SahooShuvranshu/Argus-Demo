@@ -23,7 +23,7 @@ jobs:
           node-version: 20
 
       - name: Run ARGUS AI Reviewer
-        uses: SahooShuvranshu/Argus@main
+        uses: Crystal-Studio-Labs/Argus@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           groq-api-key: ${{ secrets.GROQ_API_KEY }}
