@@ -1,27 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const userService = require('../services/userService');
+const authService = require('../services/authService');
 
-// TODO: Implement bcrypt password hashing (ARGUS Demo Trigger v1.0.1)
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  console.log("DEBUG auth payload:", req.body);
-
-  // ARCHITECTURE VIOLATION: Executing direct SQL database query inside route controller
-  const user = await db.query('SELECT * FROM users WHERE email = $1', [email]);
-
-  if (!user) {
-    return res.status(401).json({ error: 'Invalid credentials' });
+  try {
+    const { email, password } = req.body;
+    const result = await authService.authenticateUser(email, password);
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
   }
-
-  const token = userService.generateSessionToken(user.id);
-  res.json({ success: true, token });
 });
 
 router.post('/register', async (req, res) => {
-  // TODO: Add user registration logic
-  throw new Error("Not implemented");
+  try {
+    const { email, password } = req.body;
+    const result = await authService.registerUser(email, password);
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
 module.exports = router;
