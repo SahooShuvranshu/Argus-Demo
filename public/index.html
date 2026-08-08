@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARGUS Demo — System Status Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <header class="header">
+      <div class="brand">
+        <span class="eye-icon">👁️</span>
+        <span class="brand-title">ARGUS DEMO PORTAL</span>
+      </div>
+      <div class="header-status">
+        <span class="status-pill status-active"><span class="pulse-dot"></span> SYSTEM ONLINE</span>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="hero-card">
+        <h1 class="hero-heading">ARGUS CODE REVIEWER DEMO DASHBOARD</h1>
+        <p class="hero-subtext">Real-time status monitoring, active AI model telemetry, and multi-stage evaluation metrics.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-label">ACTIVE AI MODEL</div>
+          <div class="metric-value text-purple" id="val-model">Groq llama-3.3-70b</div>
+          <div class="metric-sub">Sub-second 70B inference engine</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">EVALUATION PIPELINE</div>
+          <div class="metric-value text-cyan">3-Stage Active</div>
+          <div class="metric-sub">Atlas ➔ Athena ➔ Hermes</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">SYSTEM UPTIME</div>
+          <div class="metric-value text-green" id="val-uptime">99.98%</div>
+          <div class="metric-sub">Zero-crash fallback protection</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-label">REVIEW ACCURACY</div>
+          <div class="metric-value text-gold">100% Deterministic</div>
+          <div class="metric-sub">architecture.md compliance</div>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-header">LIVE TELEMETRY LOGS</div>
+        <div class="log-console" id="log-console">
+          <p><span class="time">[00:01:01]</span> <span class="tag tag-cyan">INFO</span> Server initialized on port 3000.</p>
+          <p><span class="time">[00:01:02]</span> <span class="tag tag-purple">ARGUS</span> Active reviewer pipeline: Atlas, Athena, Hermes.</p>
+          <p><span class="time">[00:01:03]</span> <span class="tag tag-green">AI</span> Provider connected: Groq Cloud (llama-3.3-70b-versatile).</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>ARGUS Demo System Status • Powered by Crystal Studio Labs</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
